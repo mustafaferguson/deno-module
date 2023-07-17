@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "strict": true
+  },
+  "fmt": {
+    "files": {
+      "include": ["./src/**/*.ts"],
+      "exclude": []
+    },
+    "options": {
+      "indentWidth": 4,
+      "semiColons": true,
+      "singleQuote": true,
+      "useTabs": true
+    }
+  },
+  "imports": {
+    "std/": "https://deno.land/std@0.61.0/"
+  },
+  "lint": {
+    "files": {
+      "include": ["./src/**/*.ts"],
+      "exclude": []
+    },
+    "rules": {
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"],
+      "tags": ["recommended"]
+    }
+  },
+  "tasks": {
+    "format": "deno fmt ./src/",
+    "start": "deno run --unstable mod.ts"
+  },
+  "test": {
+    "files": {
+      "include": ["./tests/"],
+      "exclude": []
+    }
+  }
+}
